@@ -2432,6 +2432,8 @@
 */
 .bo-cir {border-radius: 50%;}
 
+.rounded_pill{border-radius: 5rem;}
+
 .of-hidden {overflow: hidden;}
 
 .visible-false {visibility: hidden;}
@@ -3050,6 +3052,13 @@
 .flex-8{flex: 8;}
 .flex-9{flex: 9;}
 .flex-10{flex: 10;}
+
+
+
+/* shadow ========================= */
+.filter_shadow{
+	filter: drop-shadow(2px 4px 6px black);
+}
 
 
 
