@@ -62,7 +62,7 @@
   <section id="top_actions_section" class="row m-b-0 container">
       <!-- add button--------- -->
       <div class="p-l-10 p-r-10 p-t-10 col s12 m3 l2">
-        <button class="waves-effect waves-light btn blue darken-2 p-l-30 p-r-30 w-full rounded_pill flex-c">
+        <button id="add_user_button" class="waves-effect waves-light btn blue darken-2 p-l-30 p-r-30 w-full rounded_pill flex-c">
             <i class="material-icons m-r-5">add</i>
             Add User
         </button>
@@ -227,6 +227,43 @@
   </section>
   
 
+  <div class="add_user_modal_back dis-none"></div>
+  <div class="add_user_modal container rounded_top_30 trans-0-1">
+    <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
+      <h5>
+        <i class="material-icons m-r-10 m-l-10 pos-relative top-4">person_add</i>
+        Add User
+      </h5>
+
+      <form>
+        <div class="input-field col s12">
+          <input id="name" type="text" class="validate" />
+          <label for="name">name:</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="username" type="text" class="validate" />
+          <label for="username">username: </label>
+        </div>
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" />
+          <label for="email">Email</label>
+        </div>
+
+
+        <button
+          type="button"
+          class="waves-effect waves-light btn blue darken-1 m-t-20 m-b-10 w-full max-w-250 rounded_pill"
+        >
+          submit
+        </button>
+
+
+
+      </form>
+
+
+    </div>
+  </div>
   
   <!-- content section ---------end------- -->
 
