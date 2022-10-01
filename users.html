@@ -5,22 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="/assets/materialize/css/materialize-rtl.css">
     <link rel="stylesheet" href="/assets/css/util.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>Document</title>
 </head>
-<body dir="rtl">
+<body>
 
   <!-- navbar section ---------start-------------------- -->
     <nav class="white z-depth-0 top_navbar">
         <div class="nav-wrapper">
           <a href="#!" class="blue-text hide-on-med-and-up">Users management</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-text right"><i class="material-icons">menu</i></a>
-          <ul class="hide-on-med-and-down dis-flex">
-            <li><a href="/" class="blue-text">خانه</a></li>
-            <li><a href="/users.html" class="blue-text">مدیریت کاربران</a></li>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger blue-text"><i class="material-icons">menu</i></a>
+          <ul class="hide-on-med-and-down container">
+            <li><a href="/" class="blue-text">Home</a></li>
+            <li><a href="/users.html" class="blue-text">User Management</a></li>
             <li><a href="https://codeyad.com" class="blue-text">Codeyad</a></li>
             <li><a href="https://www.youtube.com/channel/UC7_WFOLcQ4x9HCat_pE3hcA" class="blue-text">AQ fast learn</a></li>
           </ul>
@@ -40,13 +39,13 @@
       </li>
       <li>
         <a href="https://www.youtube.com/channel/UC7_WFOLcQ4x9HCat_pE3hcA">
-          <i class="material-icons right sidenav_link_icon">insert_link</i>
+          <i class="material-icons">insert_link</i>
           AQ Fast Learn
         </a>
       </li>
       <li>
         <a href="https://codeyad.com">
-          <i class="material-icons right sidenav_link_icon">insert_link</i>
+          <i class="material-icons">insert_link</i>
           Codeyad
         </a>
       </li>
@@ -150,7 +149,7 @@
           </tr>
         </thead>
 
-        <tbody>
+        <tbody class="desktop_table_body">
           <tr>
             <td>1</td>
             <td>Qasem Bsk</td>
@@ -219,8 +218,8 @@
       </div>
 
       <div class="pgination_buttons">
-        <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
         <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
+        <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
       </div>
 
     </div>
@@ -229,7 +228,7 @@
   
 
   <div class="add_user_modal_back dis-none"></div>
-  <div class="add_user_modal container rounded_top_30 trans-0-3">
+  <div class="add_user_modal container rounded_top_30 trans-0-1">
     <div class="row p-t-10 p-b-10 p-r-40 p-l-40 center-on-small-only">
       <h5>
         <i class="material-icons m-r-10 m-l-10 pos-relative top-4">person_add</i>
