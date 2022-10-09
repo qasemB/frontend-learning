@@ -226,10 +226,10 @@
 
   </section>
 
-  <section id="test_section" class="grey" x-data="{message: 'I love Programming'}">
+  <section id="test_section" class="grey" x-data="mainData()">
     111
     <span x-text="message" class="red"></span>
-    <button class="btn" x-on:click="message = 'I love Alpine'">click</button>
+    <button class="btn" x-on:click="testFunc()">click</button>
   </section>
   
 
@@ -275,6 +275,7 @@
 
 
   <script defer src="/assets/js/alpine.js"></script>
+  <script src="/assets/js/alpineJsContollers/maniController.js"></script>
   <script src="/assets/materialize/js/materialize.min.js"></script>
     <script src="/assets/js/app.js"></script>
     <script src="/assets/js/users.js"></script>
