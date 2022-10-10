@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <title>Document</title>
 </head>
-<body>
+<body x-data="usersData">
 
   <!-- navbar section ---------start-------------------- -->
     <nav class="white z-depth-0 top_navbar">
@@ -82,7 +82,7 @@
 
   </section>
 
-  <section class="user_list_section">
+  <section class="user_list_section" x-init="getUsers()">
     <ul class="collapsible hide-on-med-and-up">
       <li class="users_list_item">
         <div class="collapsible-header">
@@ -150,58 +150,21 @@
         </thead>
 
         <tbody class="desktop_table_body">
-          <tr>
-            <td>1</td>
-            <td>Qasem Bsk</td>
-            <td>qasemB</td>
-            <td>example@test.com</td>
-            <td>berlin - example street ...</td>
-            <td>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-              <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">
-                delete_forever
-              </i>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Qasem Bsk</td>
-            <td>qasemB</td>
-            <td>example@test.com</td>
-            <td>berlin - example street ...</td>
-            <td>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-              <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">
-                delete_forever
-              </i>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Qasem Bsk</td>
-            <td>qasemB</td>
-            <td>example@test.com</td>
-            <td>berlin - example street ...</td>
-            <td>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-              <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">
-                delete_forever
-              </i>
-            </td>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Qasem Bsk</td>
-            <td>qasemB</td>
-            <td>example@test.com</td>
-            <td>berlin - example street ...</td>
-            <td>
-              <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-              <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">
-                delete_forever
-              </i>
-            </td>
-          </tr>
+          <template x-for="user in users">
+            <tr>
+              <td x-text="user.id"></td>
+              <td x-text="user.name"></td>
+              <td x-text="user.username"></td>
+              <td x-text="user.email"></td>
+              <td x-text="user.address.city+' - '+user.address.street"></td>
+              <td>
+                <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
+                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">
+                  delete_forever
+                </i>
+              </td>
+            </tr>
+          </template>
         </tbody>
       </table>
     </div>
@@ -224,12 +187,6 @@
 
     </div>
 
-  </section>
-
-  <section id="test_section" class="grey" x-data="mainData()">
-    111
-    <span x-text="message" class="red"></span>
-    <button class="btn" x-on:click="testFunc()">click</button>
   </section>
   
 
@@ -274,10 +231,12 @@
   <!-- content section ---------end------- -->
 
 
+
   <script defer src="/assets/js/alpine.js"></script>
-  <script src="/assets/js/alpineJsContollers/maniController.js"></script>
+  <script src="/assets/js/alpineJsContollers/usersController.js"></script>
+  <script src="/assets/js/axios.js"></script>
   <script src="/assets/materialize/js/materialize.min.js"></script>
-    <script src="/assets/js/app.js"></script>
-    <script src="/assets/js/users.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/users.js"></script>
 </body>
 </html>
