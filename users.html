@@ -82,58 +82,51 @@
 
   </section>
 
+  <template x-if="isLoading">
+    <div class="center-align">
+      <div class="preloader-wrapper small active">
+        <div class="spinner-layer spinner-green-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
   <section class="user_list_section" x-init="getUsers()">
     <ul class="collapsible hide-on-med-and-up">
-      <li class="users_list_item">
-        <div class="collapsible-header">
-          <i class="material-icons blue-text darken-2 users_list_arrow_icon trans-0-2">arrow_drop_down_circle</i>
-          Qasem Bsk
-        </div>
-        <div class="collapsible-body">
-          <div class="p-all-5">
-            <span class="f-bold">Username : </span>
-            <span> qasemB</span>
+      <template x-for="user in users">
+        <li class="users_list_item">
+          <div class="collapsible-header">
+            <i class="material-icons blue-text darken-2 users_list_arrow_icon trans-0-2">arrow_drop_down_circle</i>
+            <span x-text="user.name"></span>
           </div>
-          <div class="p-all-5">
-            <span class="f-bold">Email : </span>
-            <span>qasemB@gmail.com</span>
+          <div class="collapsible-body">
+            <div class="p-all-5">
+              <span class="f-bold">Username : </span>
+              <span x-text="user.username"></span>
+            </div>
+            <div class="p-all-5">
+              <span class="f-bold">Email : </span>
+              <span x-text="user.email"></span>
+            </div>
+            <div class="p-all-5">
+              <span class="f-bold">Address : </span>
+              <span x-text="user.address.city+'-'+user.address.street"></span>
+            </div>
+            <div class="p-all-5 flex-l-m">
+              <span class="f-bold">Action : </span>
+              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+              <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
+            </div>
           </div>
-          <div class="p-all-5">
-            <span class="f-bold">Address : </span>
-            <span> berlin - example street ...</span>
-          </div>
-          <div class="p-all-5 flex-l-m">
-            <span class="f-bold">Action : </span>
-            <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-            <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-          </div>
-        </div>
-      </li>
-      <li class="users_list_item">
-        <div class="collapsible-header">
-          <i class="material-icons blue-text darken-2 users_list_arrow_icon trans-0-2">arrow_drop_down_circle</i>
-          Qasem Bsk
-        </div>
-        <div class="collapsible-body">
-          <div class="p-all-5">
-            <span class="f-bold">Username : </span>
-            <span> qasemB</span>
-          </div>
-          <div class="p-all-5">
-            <span class="f-bold">Email : </span>
-            <span>qasemB@gmail.com</span>
-          </div>
-          <div class="p-all-5">
-            <span class="f-bold">Address : </span>
-            <span> berlin - example street ...</span>
-          </div>
-          <div class="p-all-5 flex-l-m">
-            <span class="f-bold">Action : </span>
-            <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
-            <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
-          </div>
-        </div>
-      </li>
+        </li>
+      </template>
     </ul>
 
     <div class="hide-on-med-and-down show-on-medium-and-up container">
@@ -186,7 +179,6 @@
       </div>
 
     </div>
-
   </section>
   
 
