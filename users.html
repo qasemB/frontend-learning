@@ -70,7 +70,7 @@
       <!-- search section--------- -->
       <div class="row col s12 m9 l8 m-b-5">
         <div class="input-field col s12">
-          <input id="search" type="text" class="validate">
+          <input id="search" type="text" class="validate" x-on:keyDown="handleSearch($el)">
           <label for="search">
             <i class="material-icons pos-relative top-7">search</i>
             Search
