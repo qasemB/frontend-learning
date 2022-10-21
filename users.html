@@ -166,11 +166,12 @@
 
       <div class="pagination_item_counts flex-l p-l-10 flex-l-m ">
         showing
-        <span class="m-l-5 m-r-5 max-w-50">
-          <input type="number" class="blue-text darken-2 no-border center-align m-b-0" value="10">
+        <span class="m-l-5 m-r-5 max-w-50 pos-relative top-4" 
+        x-init="$watch('itemsCount', (value)=>handleChangeItemsCount(value))">
+          <input type="number" class="blue-text darken-2 no-border center-align m-b-0" x-model="itemsCount" x-on:change="pagination()">
         </span>
         of 
-        <span class="blue-text darken-2 m-l-5 m-r-5">100</span>
+        <span class="blue-text darken-2 m-l-5 m-r-5" x-text="users.length">100</span>
       </div>
 
       <strong x-text="currentPage" class="blue-text page_number"></strong>
