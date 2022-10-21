@@ -8,6 +8,7 @@ document.addEventListener('alpine:init', () => {
         pageCount: 1,
         itemsCount: 4,
         currentPage: 1,
+        searchChar:"",
         getUsers(){
             this.isLoading = true
             axios.get("https://jsonplaceholder.typicode.com/users").then((res)=>{
@@ -39,12 +40,10 @@ document.addEventListener('alpine:init', () => {
             if (value < 1) this.itemsCount = 1     
             if (value > this.users.length) this.itemsCount = this.users.length
         },
-        handleSearch(e){
-            setTimeout(()=>{
-                this.users = this.mainUsers.filter(user=>(user.name.includes(e.value) || user.username.includes(e.value) || user.email.includes(e.value)))
-                this.currentPage = 1
-                this.pagination()
-            },100)
+        handleSearch(value){
+            this.users = this.mainUsers.filter(user=>(user.name.includes(value) || user.username.includes(value) || user.email.includes(value)))
+            this.currentPage = 1
+            this.pagination()
         }
     }))
 })
