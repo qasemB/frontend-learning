@@ -6,7 +6,7 @@ document.addEventListener('alpine:init', () => {
         showAddModal: false,
         pageCount: 1,
         itemsCount: 4,
-        currentPage: 3,
+        currentPage: 1,
         getUsers(){
             this.isLoading = true
             axios.get("https://jsonplaceholder.typicode.com/users").then((res)=>{
@@ -18,9 +18,19 @@ document.addEventListener('alpine:init', () => {
         },
         pagination(){
             this.pageCount = Math.ceil(this.users.length / this.itemsCount) // 10 / 4 = 3
-            let start = (this.currentPage * this.itemsCount) - this.itemsCount  // 0
-            let end = this.currentPage * this.itemsCount // 4
+            const start = (this.currentPage * this.itemsCount) - this.itemsCount  // 0
+            const end = this.currentPage * this.itemsCount // 4
             this.pageUsers = this.users.slice(start,end)
-        }
+        },
+        nextPage(){
+            this.currentPage++
+            if (this.currentPage > this.pageCount) this.currentPage = this.pageCount            
+            this.pagination()
+        },
+        prevPage(){
+            this.currentPage--
+            if (this.currentPage < 1) this.currentPage = 1     
+            this.pagination()
+        },
     }))
 })

@@ -173,9 +173,11 @@
         <span class="blue-text darken-2 m-l-5 m-r-5">100</span>
       </div>
 
+      <strong x-text="currentPage" class="blue-text page_number"></strong>
+
       <div class="pgination_buttons">
-        <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_left</i>
-        <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill">keyboard_arrow_right</i>
+        <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill" x-on:click="prevPage()">keyboard_arrow_left</i>
+        <i class="material-icons blue darken-2 m-l-5 m-r-5 p-l-5 p-r-5 p-t-1 p-b-3 waves-effect waves-light white-text rounded_pill" x-on:click="nextPage()">keyboard_arrow_right</i>
       </div>
 
     </div>
