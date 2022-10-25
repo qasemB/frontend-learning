@@ -195,16 +195,19 @@
       </h5>
 
       <form>
+
         <div class="input-field col s12">
-          <input id="name" type="text" class="validate" />
+          <input id="name" type="text" class="validate" x-model="newUserInfo.name"/>
           <label for="name">name:</label>
         </div>
+
         <div class="input-field col s12">
-          <input id="username" type="text" class="validate" />
+          <input id="username" type="text" class="validate" x-model="newUserInfo.username"/>
           <label for="username">username: </label>
         </div>
+        
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate" />
+          <input id="email" type="email" class="validate" x-model="newUserInfo.email"/>
           <label for="email">Email</label>
         </div>
 
@@ -212,6 +215,7 @@
         <button
           type="button"
           class="waves-effect waves-light btn blue darken-1 m-t-20 m-b-10 w-full max-w-250 rounded_pill"
+          x-on:click="handleSubmitAddUserForm()"
         >
           submit
         </button>

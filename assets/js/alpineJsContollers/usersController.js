@@ -9,6 +9,11 @@ document.addEventListener('alpine:init', () => {
         itemsCount: 4,
         currentPage: 1,
         searchChar:"",
+        newUserInfo:{
+            name:"",
+            username:"",
+            email:"",
+        },
         getUsers(){
             this.isLoading = true
             axios.get("https://jsonplaceholder.typicode.com/users").then((res)=>{
@@ -44,6 +49,9 @@ document.addEventListener('alpine:init', () => {
             this.users = this.mainUsers.filter(user=>(user.name.includes(value) || user.username.includes(value) || user.email.includes(value)))
             this.currentPage = 1
             this.pagination()
+        },
+        handleSubmitAddUserForm(){
+            console.log(this.newUserInfo);
         }
     }))
 })
