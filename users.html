@@ -118,7 +118,7 @@
             </div>
             <div class="p-all-5">
               <span class="f-bold">Address : </span>
-              <span x-text="user.address.city+'-'+user.address.street"></span>
+              <span x-text="(!user.address?.city && '') + '-' + (!user.address?.street && '')"></span>
             </div>
             <div class="p-all-5 flex-l-m">
               <span class="f-bold">Action : </span>
@@ -150,7 +150,7 @@
               <td x-text="user.name"></td>
               <td x-text="user.username"></td>
               <td x-text="user.email"></td>
-              <td x-text="user.address.city+' - '+user.address.street"></td>
+              <td x-text="(!user.address?.city && '') + '-' + (!user.address?.street && '')"></td>
               <td>
                 <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
                 <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">
@@ -216,6 +216,8 @@
           type="button"
           class="waves-effect waves-light btn blue darken-1 m-t-20 m-b-10 w-full max-w-250 rounded_pill"
           x-on:click="handleSubmitAddUserForm()"
+          x-bind:class="{'pulse' : isLoading}"
+          x-bind:disabled="isLoading"
         >
           submit
         </button>
