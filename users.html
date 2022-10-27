@@ -118,11 +118,11 @@
             </div>
             <div class="p-all-5">
               <span class="f-bold">Address : </span>
-              <span x-text="(!user.address?.city && '') + '-' + (!user.address?.street && '')"></span>
+              <span x-text="(user.address?.city || '') + '-' + (user.address?.street || '')"></span>
             </div>
             <div class="p-all-5 flex-l-m">
               <span class="f-bold">Action : </span>
-              <i class="material-icons red-text m-l-5 m-r-5">delete_forever</i>
+              <i class="material-icons red-text m-l-5 m-r-5" x-on:click="handleDeleteUser(user.id)">delete_forever</i>
               <i class="material-icons orange-text darken-3 m-l-5 m-r-5">edit</i>
             </div>
           </div>
@@ -150,10 +150,10 @@
               <td x-text="user.name"></td>
               <td x-text="user.username"></td>
               <td x-text="user.email"></td>
-              <td x-text="(!user.address?.city && '') + '-' + (!user.address?.street && '')"></td>
+              <td x-text="(user.address?.city || '') + '-' + (user.address?.street || '')"></td>
               <td>
                 <i class="material-icons orange-text darken-3 m-l-5 m-r-5 hov-pointer">edit</i>
-                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer">
+                <i class="material-icons red-text m-l-5 m-r-5 hov-pointer" x-on:click="handleDeleteUser(user.id)">
                   delete_forever
                 </i>
               </td>
