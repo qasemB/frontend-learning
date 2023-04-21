@@ -59,7 +59,8 @@
 
   <!-- content section ---------start-------------------- -->
     
-  <section id="top_actions_section" class="row m-b-0 container">
+  <section id="top_actions_section" class="row m-b-0 container" x-data="testController">
+    <a id="download" class="btn">download</a>
       <!-- add button--------- -->
       <div class="p-l-10 p-r-10 p-t-10 col s12 m3 l2">
         <button id="add_user_button" class="waves-effect waves-light btn blue darken-2 p-l-30 p-r-30 w-full rounded_pill flex-c" x-on:click="showAddModal = true; userIdToEdit = null; handleResetForm()" >
@@ -236,6 +237,7 @@
 
   <script defer src="/assets/js/alpine.js"></script>
   <script src="/assets/js/alpineJsContollers/usersController.js"></script>
+  <script src="/assets/js/alpineJsContollers/testController.js"></script>
   <script src="/assets/js/axios.js"></script>
   <script src="/assets/materialize/js/materialize.min.js"></script>
   <script src="/assets/js/app.js"></script>
